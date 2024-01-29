@@ -19,3 +19,6 @@ Manejo de objetos props
 
 ## 1.6
 Manejo de componentes auxiliares y componentes condicionales
+
+## 1.12
+Manejo de elementos del array(matriz) en componentes
