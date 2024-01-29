@@ -15,6 +15,7 @@ Manejo de los props
 Manejo de objetos props
 
 ## 1.5
-Manejo de listo de objetos props
+Manejo de objetos props
 
 ## 1.6
+Manejo de componentes auxiliares y componentes condicionales
