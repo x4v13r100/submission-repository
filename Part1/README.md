@@ -9,10 +9,12 @@ información del curso, paso 2
 Refactoriza el componente Content 
 
 ## 1.3
-Descripción del ejercicio 1.3...
+Manejo de los props
 
 ## 1.4
-Descripción del ejercicio 1.4...
+Manejo de objetos props
 
 ## 1.5
-Descripción del ejercicio 1.5...
+Manejo de listo de objetos props
+
+## 1.6
