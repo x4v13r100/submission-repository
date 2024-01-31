@@ -1,16 +1,28 @@
 import { useState } from 'react'
 
+let points = [0, 0, 0, 0, 0, 0, 0, 0]
+
 const Button = (props) => {
   return (
-    <button onClick={props.nextAnecdotes}>next anecdote</button>
+      <button onClick={props.buttonMain}>{props.name}</button>
   )
 };
-
 
 const Display = (props) => {
   return (
     <div>
       <h3>{props.viewAnecdotes}</h3>
+      <p> has {props.viewVotes} votes</p>
+    </div>
+  )
+}
+
+const AnecdoteMostVoted = (props) => {
+  return (
+    <div>
+      <h3>Anecdote with most votes</h3>
+      <p>{props.mostVoted}</p>
+      <p>has {props.votes} votes</p>
     </div>
   )
 }
@@ -28,15 +40,31 @@ const App = () => {
   ]
 
   const [selected, setSelected] = useState(0)
+  const [voted, setVoted] = useState(0)
 
+  //console.log(selected);
+ 
   const nextAnecdotes = () => {
     setSelected(Math.floor(Math.random() * anecdotes.length))
+  }
+
+  const copied = [...points]
+  
+  //console.log(copied);
+  
+  const anecdoteVoted = () => {
+    //console.log(voted);
+    setVoted(voted + 1)
+    points[selected] += 1
   }
 
   return (
     <div>
       <Display viewAnecdotes={anecdotes[selected]}/>
-      <Button nextAnecdotes={nextAnecdotes}/>
+      <Display viewVotes={copied[selected]}/>
+      <Button buttonMain={anecdoteVoted} name="vote"/>
+      <Button buttonMain={nextAnecdotes} name="next anecdote"/>
+      <AnecdoteMostVoted mostVoted={anecdotes[copied.indexOf(Math.max(...copied))]} votes={Math.max(...copied)}/>
     </div>
   )
 }
